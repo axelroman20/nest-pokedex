@@ -1,13 +1,11 @@
 import { Module } from '@nestjs/common';
-import { MongooseModule } from '@nestjs/mongoose';
-import { Pokemon, PokemonSchema } from 'src/pokemon/entities/pokemon.entity';
+import { CommonModule } from 'src/common/common.module';
+import { PokemonModule } from 'src/pokemon/pokemon.module';
 import { SeedController } from './seed.controller';
 import { SeedService } from './seed.service';
 
 @Module({
-  imports: [
-    MongooseModule.forFeature([{ name: Pokemon.name, schema: PokemonSchema }]),
-  ],
+  imports: [PokemonModule, CommonModule],
   controllers: [SeedController],
   providers: [SeedService],
 })
