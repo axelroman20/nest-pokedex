@@ -19,18 +19,26 @@ npm i -g @nestjs/cli
 docker-compose up -d
 ```
 
-5. Clonar el archivo __.env.template__ y renombrarlo a __.env__
+1. Clonar el archivo ```.env.template``` y renombrarlo a ```.env```
 
-6. LLenar las variables de entorno definidas en el archivo __.env__
+2. LLenar las variables de entorno definidas en el archivo ```.env```
 
-7. Ejecutar la aplicación en dev:
+3. Ejecutar la aplicación en dev:
 ```
 yarn start:dev
 ```
 
-8. Reconstruir la base de datos con la semilla
+1. Reconstruir la base de datos con la semilla
 ```
 http://localhost:3000/api/v2/seed
+```
+
+# Producción Build
+1. Crear el archivo ```.env.prod```
+2. Llenar las variables de entorno de prod
+3. Crear la nueva imagen
+```
+docker-compose -f docker-compose.prod.yaml --env-file .env.prod up --build
 ```
 
 ## Stack usado
