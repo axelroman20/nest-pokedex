@@ -14,10 +14,6 @@ import { SeedModule } from './seed/seed.module';
       validationSchema: JoiValidationSchema,
     }),
 
-    // ServeStaticModule.forRoot({
-    //   rootPath: join(__dirname, '..', 'public'),
-    // }),
-
     MongooseModule.forRoot(process.env.MONGODB),
 
     PokemonModule,
